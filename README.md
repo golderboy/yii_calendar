@@ -16,8 +16,8 @@
           $event = new \yii2fullcalendar\models\Event();
           $event->id = $time->eve_id;//pramay key
           $event->title = $time->title;//name show
-          $event->start = date('Y-m-d\Th:m:s\Z',strtotime($time->date_start));//datetime start
-          $event->end = date('Y-m-d\Th:m:s\Z',strtotime($time->date_start));//datetime end
+          $event->start = date($time->date_start);//datetime start
+          $event->end = date($time->date_start);//datetime end
           $events[] = $event;
         }
         ....
