@@ -34,3 +34,8 @@
       'events' => $events
     ));
     ?>
+
+#เพิ่มเติม
+#คู่มือ: http://arshaw.com/fullcalendar/docs/ 
+#Yii2 Extension by philipp@frenzel.net
+
