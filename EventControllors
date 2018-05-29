@@ -1,0 +1,44 @@
+<?php
+
+.....
+.....
+
+class MeventController extends Controller
+{
+
+      ....
+      .....
+
+    public function actionIndex()
+    {
+        ....
+        .....
+        
+		    $times = Mevent::find()->all();
+        $events = array();
+    
+        foreach ($times AS $time){
+          //Testing
+          $event = new \yii2fullcalendar\models\Event();
+          //$Event->allDay = true;
+          $event->id = $time->eve_id;//pramay key
+          $event->title = $time->title;//name show
+          //$event->start = date('yyyy-mm-dd\Thh:mm:ss\Z',strtotime($time->date_start));//datetime start
+          //$event->end = date('yyyy-mm-dd\Thh:mm:ss\Z',strtotime($time->date_start));//datetime end
+          $event->start = date($time->date_start);//datetime start
+          $event->end = date($time->date_end);//datetime end
+          $events[] = $event;
+        }
+        
+        return $this->render('index', [
+            ....
+            
+            'events' => $events,//ส่งค่า
+            
+            .....
+        ]);
+    }
+    
+    .....
+    .....
+}
