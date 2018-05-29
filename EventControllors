@@ -27,6 +27,7 @@ class MeventController extends Controller
           //$event->end = date('yyyy-mm-dd\Thh:mm:ss\Z',strtotime($time->date_start));//datetime end
           $event->start = date($time->date_start);//datetime start
           $event->end = date($time->date_end);//datetime end
+	  $event->color = $time->sroom->room_color;
           $events[] = $event;
         }
         
